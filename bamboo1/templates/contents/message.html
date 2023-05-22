@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1, user-scalable=no">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		
+		<title>✉️-쪽지</title>
+
+		<style>
+			.navbar {
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+		body {
+			margin-top: 56px; /* navbar height */
+		}</style>
+	</head>
+	<body>
+	<style>
+		body { background-color: rgb(246, 245, 239); width: auto;}
+		td {overflow:hidden;}
+	</style>
+
+	<nav class="navbar navbar-expand-sm rgb(246, 245, 239) sticky-top device-width">
+		<!--LOGO-->
+		<a class="navbar-brand" href="/" style="color: #000000;">HOME</a>
+		<!--Links-->
+		<div class="container-fluid device-width">
+		<ul class="nav navbar-nav">
+		<li class="nav-item active">
+			<a class="nav-link" href="/post" style="color: #000000;">🎋-대숲</a>
+		</li>
+		</ul>
+	</nav>
+	</div>
+
+	<div class="container">
+	<br><h1><strong><a style="color:#000000;">✉️-쪽지</a></strong></h1>
+	<table class="table table-hover">
+		<thead>
+		<tr>
+			<th>Type</th>
+			<th>Title</th>
+			<th>From</th>
+			<th>Date</th>
+		</tr>
+		</thead>
+
+		<tbody>
+		{% for post in postlist %}
+		<tr>
+			<td><strong>받은쪽지</strong></td>
+			<td><a style="color:#000000;" href="/message/m_content/{{post['no']}}">{{post['m_txt'][2:20]}}...</a></td>
+			<td>{{post['m_f']}}</td>
+			<td>{{post['m_d']}}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	</div>
+	</body>
+</html>
+

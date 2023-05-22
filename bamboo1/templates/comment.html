@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title></title>
+
+    </head>
+
+<body>  
+    {% for data_ in data %}
+    <script>
+        var result = confirm("작성되었습니다!");
+        if(result){
+            document.location.href="/post/content/{{data_['id']}}";
+        }
+        else{
+            document.location.href="/post/content/{{data_['id']}}";
+        }
+    </script>
+    {% endfor %}
+</body>
+</html>
